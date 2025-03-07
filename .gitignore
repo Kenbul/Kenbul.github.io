@@ -1,0 +1,17 @@
+# Node modules
+node_modules/
+
+# Tailwind CSS build files (optional, kalau generate output otomatis)
+*.css.map
+output.css
+
+# System files
+.DS_Store
+Thumbs.db
+
+# IDE / Editor files
+.vscode/
+.idea/
+
+# Environment files (kalau nanti pakai)
+.env
