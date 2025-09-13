@@ -13,8 +13,10 @@
     </style>
   </head>
   <body class="bg-primary">
-    <nav class="top-0 left-0 w-full bg-secondary shadow-md p-4 z-50">
-      <div class="max-w-screen-xl flex justify-between items-center">
+    <nav class="fixed top-0 left-0 w-full bg-secondary shadow-md z-50">
+      <div
+        class="max-w-screen-xl mx-auto flex justify-between items-center p-4"
+      >
         <!-- Logo -->
         <div class="flex justify-center items-center h-16">
           <img src="assets/Logo.svg" alt="Logo" class="w-6" />
@@ -22,7 +24,7 @@
         </div>
 
         <!-- Menu (Desktop) -->
-        <div class="flex space-x-4">
+        <div class="hidden md:flex space-x-6">
           <a href="#home" class="text-white hover:underline font-semibold"
             >Home</a
           >
@@ -34,8 +36,19 @@
           >
         </div>
 
-        <!-- Mobile Menu (Hidden Default)
-      <div id="mobile-menu" class="nav-mobile bg-secondary px-4">
+        <!-- Hamburger Button -->
+
+        <!-- Hamburger Button (Mobile) -->
+        <button id="menu-btn" class="md:hidden text-white focus:outline-none">
+          <i class="fa-solid fa-bars text-2xl"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-secondary px-4 pb-4 z-50"
+      >
         <a
           href="#home"
           class="block py-2 text-white hover:underline font-semibold"
@@ -50,7 +63,7 @@
           href="#contact"
           class="block py-2 text-white hover:underline font-semibold"
           >Contact</a
-        > -->
+        >
       </div>
     </nav>
 
@@ -62,10 +75,10 @@
         <h1 id="typing" class="text-4xl font-bold text-white fancy-text"></h1>
         <h2 class="text-xl text-white mt-2">Mahasiswa Sistem Informasi</h2>
         <p class="mt-4 text-white">Junior Web Develover, Data Analis</p>
-        <div class="mt-6 space-x-4">
+        <div class="mt-2 space-x-4">
           <a
             href="#project"
-            class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-red-300 shadow-lg hover:shadow-white"
+            class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 shadow-lg hover:shadow-blue-700"
             >View My Work</a
           >
         </div>
@@ -81,11 +94,12 @@
           </a>
         </div>
       </div>
-      <div class="flex-shrink-0">
+      <div class="flex-shrink-0" style="perspective: 1000px">
         <img
+          id="profile-img"
           src="assets/profile.webp"
           alt="Theo's Photo"
-          class="w-30 h-30 object-cover rounded-full border-white shadow-2xl transform transition duration-700 hover:scale-110 hover:shadow-xl hover:rotate-3 hover:shadow-white/50"
+          class="w-64 h-64 object-cover rounded-full border-white shadow-2xl transition-transform duration-300 transform-gpu"
         />
       </div>
     </section>
@@ -129,6 +143,54 @@
             >Learn More &rarr;</a
           >
         </div>
+        <div
+          class="bg-gradient-to-b from-slate-800 to-slate-900 rounded-lg p-8 text-center hover:shadow-xl shadow-blue-700"
+        >
+          <div class="bg-gray-700 inline-flex items-center justify-center">
+            <video class="rounded-lg w-[500px]" controls autoplay muted loop>
+              <source
+                src="assets/project/sistem-sekolah-demo.mp4"
+                type="video/mp4"
+              />
+              Browser kamu tidak mendukung video.
+            </video>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">
+            Pendataan Siswa dan Manajemen Surat
+          </h3>
+          <p class="text-sm mb-4">
+            Dengan menggunakan SPA di menjadikan sistem ini lebih User Freandly
+          </p>
+          <a
+            href="https://github.com/Kenbul/Administrasi-Sekolah"
+            class="text-blue-400 hover:text-blue-300"
+            >Learn More &rarr;</a
+          >
+        </div>
+        <div
+          class="bg-gradient-to-b from-slate-800 to-slate-900 rounded-lg p-8 text-center hover:shadow-xl shadow-blue-700"
+        >
+          <div class="bg-gray-700 inline-flex items-center justify-center">
+            <video class="rounded-lg w-[500px]" controls autoplay muted loop>
+              <source
+                src="assets/project/sistem-scm-demo.mp4"
+                type="video/mp4"
+              />
+              Browser kamu tidak mendukung video.
+            </video>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">
+            Sistem Inventori dengan pendekatan SCM
+          </h3>
+          <p class="text-sm mb-4">
+            Dengan mengimplementasikan sistem ini stok barang anda akan terjaga
+          </p>
+          <a
+            href="https://github.com/Kenbul/Administrasi-Sekolah"
+            class="text-blue-400 hover:text-blue-300"
+            >Learn More &rarr;</a
+          >
+        </div>
       </div>
     </section>
     <section
@@ -147,15 +209,16 @@
             <a
               href="https://wa.me/6282165067574?text=Halo,%20saya%20tertarik%20dengan%20portfolio%20Anda"
               class="border border-emerald-500 text-white py-2 px-5 hover:bg-green-500 rounded transition"
-              ><i class="fa-brands fa-whatsapp"></i
-            ></a>
+              ><i class="fa-brands fa-whatsapp"></i>
+              Wa
+            </a>
             <a
               href="assets/cv/ari-ganda-pakpahan.pdf"
               download
               class="border border-white text-white py-2 px-5 rounded hover:bg-gray-700 transition"
             >
               <i class="fa-solid fa-file"></i>
-              GET MY CV
+              CV
             </a>
           </div>
         </div>
@@ -163,24 +226,26 @@
         <!-- Kolom 2: Social Media -->
         <div>
           <h3 class="text-xl font-bold mb-4">Follow Me</h3>
-          <ul class="flex space-x-4 text-gray-400 text-2xl">
-            <li>
-              <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
-            </li>
-            <li>
-              <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-            </li>
-            <li>
-              <a href="https://instagram.com/ari_ganda_pakpahan"
-                ><i class="fa-brands fa-instagram"></i
+          <ul class="flex space-x-4 text-gray-400 text-2xl md:text-lg">
+            <!-- <li>
+              <a href="#"
+                ><i class="fa-brands fa-square-facebook md:fa-2xs"></i
               ></a>
             </li>
             <li>
-              <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+              <a href="#"><i class="fa-brands fa-x-twitter md:fa-2xs"></i></a>
+            </li> -->
+            <li>
+              <a href="https://instagram.com/ari_ganda_pakpahan"
+                ><i class="fa-brands fa-instagram md:fa-2xs"></i
+              ></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-brands fa-linkedin md:fa-2xs"></i></a>
             </li>
             <li>
               <a href="https://github.com/Kenbul"
-                ><i class="fa-brands fa-github"></i
+                ><i class="fa-brands fa-github md:fa-2xs"></i
               ></a>
             </li>
           </ul>
@@ -210,14 +275,13 @@
         menu.classList.toggle("hidden");
       });
 
-      // auto close saat klik link
+      // Tutup otomatis setelah klik link
       document.querySelectorAll("#mobile-menu a").forEach((link) => {
         link.addEventListener("click", () => {
           menu.classList.add("hidden");
         });
       });
     </script>
-
     <!-- typewriter -->
     <script>
       const text = "Hello I'm ARI GANDA PAKPAHAN";
@@ -247,6 +311,69 @@
       }
 
       window.onload = typeWriter;
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const img = document.getElementById("profile-img");
+        if (!img) {
+          console.warn("profile-img tidak ditemukan di DOM");
+          return;
+        }
+
+        let rafId = null;
+        let mouseX = 0,
+          mouseY = 0;
+        let needsUpdate = false;
+
+        function scheduleUpdate() {
+          if (!needsUpdate) {
+            needsUpdate = true;
+            rafId = requestAnimationFrame(updateTransform);
+          }
+        }
+
+        function updateTransform() {
+          needsUpdate = false;
+
+          const rect = img.getBoundingClientRect();
+          const cx = rect.left + rect.width / 2;
+          const cy = rect.top + rect.height / 2;
+
+          // jarak kursor relatif ke center (-0.5 .. 0.5)
+          const relX = (mouseX - cx) / rect.width;
+          const relY = (mouseY - cy) / rect.height;
+
+          // faktor rotasi (atur sesuai selera)
+          const maxRotate = 15; // derajat
+          const rotateX = -relY * maxRotate; // vertical -> rotateX
+          const rotateY = relX * maxRotate; // horizontal -> rotateY
+
+          img.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.03)`;
+        }
+
+        // mousemove handler
+        function onMove(e) {
+          const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+          const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+          mouseX = clientX;
+          mouseY = clientY;
+          scheduleUpdate();
+        }
+
+        // reset saat mouse keluar
+        function reset() {
+          if (rafId) cancelAnimationFrame(rafId);
+          needsUpdate = false;
+          img.style.transform =
+            "perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)";
+        }
+
+        document.addEventListener("mousemove", onMove);
+        document.addEventListener("touchmove", onMove, { passive: true });
+
+        document.addEventListener("mouseleave", reset);
+        window.addEventListener("blur", reset); // reset saat fokus window hilang
+      });
     </script>
   </body>
 </html>
