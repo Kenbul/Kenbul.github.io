@@ -12,41 +12,61 @@
       }
     </style>
   </head>
-  <body class="bg-slate-800">
-    <nav class="fixed top-0 left-0 w-full bg-slate-900 shadow-md p-4 z-10">
-      <div class="container mx-auto flex justify-between items-center">
-        <div class="flex justify-center">
+  <body class="bg-primary">
+    <nav class="top-0 left-0 w-full bg-secondary shadow-md p-4 z-50">
+      <div class="max-w-screen-xl flex justify-between items-center">
+        <!-- Logo -->
+        <div class="flex justify-center items-center h-16">
           <img src="assets/Logo.svg" alt="Logo" class="w-6" />
           <h3 class="text-lg font-semibold text-white mx-3">Kenbul</h3>
         </div>
-        <div class="space-x-4">
-          <a href="#home" class="text-white hover:underline font-semibold h3"
+
+        <!-- Menu (Desktop) -->
+        <div class="flex space-x-4">
+          <a href="#home" class="text-white hover:underline font-semibold"
             >Home</a
           >
-          <a href="#project" class="text-white hover:underline font-semibold h3"
+          <a href="#project" class="text-white hover:underline font-semibold"
             >Project</a
           >
-          <a href="#contact" class="text-white hover:underline font-semibold h3"
+          <a href="#contact" class="text-white hover:underline font-semibold"
             >Contact</a
           >
         </div>
+
+        <!-- Mobile Menu (Hidden Default)
+      <div id="mobile-menu" class="nav-mobile bg-secondary px-4">
+        <a
+          href="#home"
+          class="block py-2 text-white hover:underline font-semibold"
+          >Home</a
+        >
+        <a
+          href="#project"
+          class="block py-2 text-white hover:underline font-semibold"
+          >Project</a
+        >
+        <a
+          href="#contact"
+          class="block py-2 text-white hover:underline font-semibold"
+          >Contact</a
+        > -->
       </div>
     </nav>
+
     <section
       class="flex flex-col md:flex-row items-center justify-between py-20 px-4 max-w-7xl mx-auto"
       id="home"
     >
       <div class="text-center md:text-left mb-8 md:mb-0">
-        <h1 class="text-4xl font-bold text-white">
-          Hello I'm ARI GANDA PAKPAHAN👋
-        </h1>
+        <h1 id="typing" class="text-4xl font-bold text-white fancy-text"></h1>
         <h2 class="text-xl text-white mt-2">Mahasiswa Sistem Informasi</h2>
         <p class="mt-4 text-white">Junior Web Develover, Data Analis</p>
         <div class="mt-6 space-x-4">
           <a
-            href="#"
-            class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-gray-400"
-            >Contact Info</a
+            href="#project"
+            class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-red-300 shadow-lg hover:shadow-white"
+            >View My Work</a
           >
         </div>
         <div class="mt-4">
@@ -63,9 +83,9 @@
       </div>
       <div class="flex-shrink-0">
         <img
-          src="assets/profile.png"
+          src="assets/profile.webp"
           alt="Theo's Photo"
-          class="w-100 h-150 object-cover rounded-full shadow-lg"
+          class="w-30 h-30 object-cover rounded-full border-white shadow-2xl transform transition duration-700 hover:scale-110 hover:shadow-xl hover:rotate-3 hover:shadow-white/50"
         />
       </div>
     </section>
@@ -112,37 +132,43 @@
       </div>
     </section>
     <section
-      class="bg-slate-900 text-white py-10 flex justify-center mt-5"
+      class="bg-slate-900 text-white py-10 mt-5 border-t border-gray-700"
       id="contact"
     >
-      <div class="container mx-auto px-12 text-left">
-        <h2 class="text-5xl font-bold mb-6">Contact me</h2>
-        <p class="mb-8">
-          Membuat Website Untuk Keperluan Bisnis, Branding, Undangan Pernikahan,
-          Tugas Kuliah...
-        </p>
-        <div class="flex justify-center space-x-4 mb-8">
-          <a
-            href="https://wa.me/6282165067574?text=Halo,%20saya%20tertarik%20dengan%20portfolio%20Anda"
-            class="border border-emerald-500 text-white py-2 px-5 hover:bg-green-500 rounded transition"
-            >MESSAGE Via WhatsApp</a
-          >
-          <a
-            href="#"
-            class="border border-white text-white py-2 px-5 rounded hover:bg-gray-700 transition"
-            >GET MY CV</a
-          >
+      <div class="container mx-auto px-6 grid grid-cols-3 md:grid-cols-3 gap-4">
+        <!-- Kolom 1: Deskripsi -->
+        <div class="col-span-2">
+          <h1 class="text-3xl font-bold mb-4">Contact Me</h1>
+          <p class="text-gray-400 mb-6">
+            Membuat Website Untuk Keperluan Bisnis, Branding, Undangan
+            Pernikahan, Tugas Kuliah...
+          </p>
+          <div class="flex space-x-4">
+            <a
+              href="https://wa.me/6282165067574?text=Halo,%20saya%20tertarik%20dengan%20portfolio%20Anda"
+              class="border border-emerald-500 text-white py-2 px-5 hover:bg-green-500 rounded transition"
+              ><i class="fa-brands fa-whatsapp"></i
+            ></a>
+            <a
+              href="assets/cv/ari-ganda-pakpahan.pdf"
+              download
+              class="border border-white text-white py-2 px-5 rounded hover:bg-gray-700 transition"
+            >
+              <i class="fa-solid fa-file"></i>
+              GET MY CV
+            </a>
+          </div>
         </div>
-      </div>
-      <div class="container mx-auto flex justify-center mt-10">
+
+        <!-- Kolom 2: Social Media -->
         <div>
-          <h3 class="text-lg font-bold mb-4">Follow Me</h3>
-          <ul class="text-gray-400 flex justify-between mb-4">
+          <h3 class="text-xl font-bold mb-4">Follow Me</h3>
+          <ul class="flex space-x-4 text-gray-400 text-2xl">
             <li>
-              <a href=""><i class="fa-brands fa-square-facebook"></i></a>
+              <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
             </li>
             <li>
-              <a href=""><i class="fa-brands fa-x-twitter"></i></a>
+              <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
             </li>
             <li>
               <a href="https://instagram.com/ari_ganda_pakpahan"
@@ -150,7 +176,7 @@
               ></a>
             </li>
             <li>
-              <a href=""><i class="fa-brands fa-linkedin"></i></a>
+              <a href="#"><i class="fa-brands fa-linkedin"></i></a>
             </li>
             <li>
               <a href="https://github.com/Kenbul"
@@ -158,17 +184,69 @@
               ></a>
             </li>
           </ul>
-          <div>
-            <h3 class="text-lg font-bold mb-4">Contact Me</h3>
+          <div class="mt-2">
+            <h3 class="text-xl font-bold mb-4">Contact Info</h3>
             <p class="text-gray-400">arigandap@gmail.com</p>
           </div>
         </div>
       </div>
+
+      <!-- Copyright -->
+      <div class="text-center text-gray-500 mt-10 text-sm">
+        © 2025 Ari Ganda Pakpahan. All rights reserved.
+      </div>
     </section>
+
     <!-- fontowesm -->
     <script
       src="https://kit.fontawesome.com/a49b250db2.js"
       crossorigin="anonymous"
     ></script>
+    <script>
+      const btn = document.getElementById("menu-btn");
+      const menu = document.getElementById("mobile-menu");
+
+      btn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+      });
+
+      // auto close saat klik link
+      document.querySelectorAll("#mobile-menu a").forEach((link) => {
+        link.addEventListener("click", () => {
+          menu.classList.add("hidden");
+        });
+      });
+    </script>
+
+    <!-- typewriter -->
+    <script>
+      const text = "Hello I'm ARI GANDA PAKPAHAN";
+      let i = 0;
+      let isDeleting = false;
+
+      function typeWriter() {
+        const element = document.getElementById("typing");
+        let speed = 120; // kecepatan normal
+
+        if (isDeleting) {
+          element.innerHTML = text.substring(0, i--);
+          speed = 60; // kecepatan hapus lebih cepat
+        } else {
+          element.innerHTML = text.substring(0, i++);
+        }
+
+        if (!isDeleting && i === text.length + 1) {
+          isDeleting = true;
+          speed = 1000; // jeda sebelum hapus
+        } else if (isDeleting && i < 0) {
+          isDeleting = false;
+          speed = 500; // jeda sebelum nulis lagi
+        }
+
+        setTimeout(typeWriter, speed);
+      }
+
+      window.onload = typeWriter;
+    </script>
   </body>
 </html>
