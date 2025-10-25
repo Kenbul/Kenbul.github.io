@@ -1,384 +1,470 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kenbul</title>
+    <title>Ari Ganda Pakpahan | Portfolio</title>
     <link rel="icon" href="assets/Logo.svg" type="image/svg" />
     <link rel="stylesheet" href="assets/css/output.css" />
+    <script
+      src="https://kit.fontawesome.com/a49b250db2.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
       html {
         scroll-behavior: smooth;
+        font-family: "Inter", sans-serif;
+      }
+      body {
+        opacity: 0;
+        transition: opacity 0.8s ease;
+      }
+      body.loaded {
+        opacity: 1;
+      }
+      caret {
+        display: inline-block;
+        width: 2px;
+        height: 1em;
+        margin-left: 4px;
+        animation: blink 1s step-end infinite;
+        vertical-align: -2px; /* rapikan posisi */
+      }
+      @keyframes blink {
+        50% {
+          opacity: 0;
+        }
       }
     </style>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
-  <body class="bg-primary">
-    <nav class="fixed top-0 left-0 w-full bg-secondary shadow-md z-50">
+
+  <body class="bg-violet-800 text-gray-200">
+    <!-- Navbar -->
+    <nav
+      id="navbar"
+      class="fixed top-0 left-0 w-full bg-slate-900/80 backdrop-blur-md z-50 transition-all duration-500"
+    >
       <div
-        class="max-w-screen-xl mx-auto flex justify-between items-center p-4"
+        class="max-w-6xl mx-auto flex justify-between items-center py-4 px-6"
       >
-        <!-- Logo -->
-        <div class="flex justify-center items-center h-16">
-          <img src="assets/Logo.svg" alt="Logo" class="w-6" />
-          <h3 class="text-lg font-semibold text-white mx-3">Kenbul</h3>
+        <div class="flex items-center">
+          <h1 class="text-xl font-semibold text-violet-300">< Kenbul /></h1>
         </div>
-
-        <!-- Menu (Desktop) -->
-        <div class="hidden md:flex space-x-6">
-          <a href="#home" class="text-white hover:underline font-semibold"
-            >Home</a
-          >
-          <a href="#project" class="text-white hover:underline font-semibold"
-            >Project</a
-          >
-          <a href="#contact" class="text-white hover:underline font-semibold"
-            >Contact</a
-          >
+        <div class="hidden md:flex space-x-8 text-sm font-semibold">
+          <a href="#home" class="hover:text-blue-400 transition">Home</a>
+          <a href="#about" class="hover:text-blue-400 transition">About</a>
+          <a href="#project" class="hover:text-blue-400 transition">Project</a>
+          <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
         </div>
-
-        <!-- Hamburger Button -->
-
-        <!-- Hamburger Button (Mobile) -->
-        <button id="menu-btn" class="md:hidden text-white focus:outline-none">
-          <i class="fa-solid fa-bars text-2xl"></i>
+        <button id="menu-btn" class="md:hidden text-white text-2xl">
+          <i class="fa-solid fa-bars"></i>
         </button>
       </div>
-
-      <!-- Mobile Menu -->
       <div
         id="mobile-menu"
-        class="hidden md:hidden bg-secondary px-4 pb-4 z-50"
+        class="md:hidden flex flex-col bg-slate-800 py-3 text-center space-y-2"
       >
-        <a
-          href="#home"
-          class="block py-2 text-white hover:underline font-semibold"
-          >Home</a
-        >
-        <a
-          href="#project"
-          class="block py-2 text-white hover:underline font-semibold"
-          >Project</a
-        >
-        <a
-          href="#contact"
-          class="block py-2 text-white hover:underline font-semibold"
-          >Contact</a
-        >
+        <a href="#home" class="hover:text-blue-400">Home</a>
+        <a href="#about" class="hover:text-blue-400">About</a>
+        <a href="#project" class="hover:text-blue-400">Project</a>
+        <a href="#contact" class="hover:text-blue-400">Contact</a>
       </div>
     </nav>
 
+    <!-- Hero -->
     <section
-      class="flex flex-col md:flex-row items-center justify-between py-20 px-4 max-w-7xl mx-auto"
       id="home"
+      class="min-h-screen flex flex-col md:flex-row justify-center items-center gap-12 px-6 pt-32"
+      data-aos="fade-down"
+      data-aos-duration="1000"
     >
-      <div class="text-center md:text-left mb-8 md:mb-0">
-        <h1 id="typing" class="text-4xl font-bold text-white fancy-text"></h1>
-        <h2 class="text-xl text-white mt-2">Mahasiswa Sistem Informasi</h2>
-        <p class="mt-4 text-white">Junior Web Develover, Data Analis</p>
-        <div class="mt-2 space-x-4">
+      <div class="md:w-1/2 text-center md:text-left">
+        <h1 class="text-3xl font-extrabold text-white leading-tight">
+          <span id="typewriter"></span><span class="caret text-blue-400"></span>
+        </h1>
+        <p class="mt-4 text-lg text-gray-300">
+          Junior Web Developer & Data Analyst <br />
+          <span class="text-blue-400">Freelancer</span>
+        </p>
+        <div class="mt-6 flex justify-center md:justify-start space-x-4">
           <a
             href="#project"
-            class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 shadow-lg hover:shadow-blue-700"
-            >View My Work</a
+            class="bg-blue-500 hover:bg-blue-600 text-white px-5 py-3 rounded-lg shadow-lg transition-all"
           >
-        </div>
-        <div class="mt-4">
-          <a href="https://instagram.com/ari_ganda_pakpahan" target="_blank">
-            <i class="fa-brands fa-instagram text-white mx-2"></i>
+            View My Work
           </a>
           <a
-            href="https://www.linkedin.com/in/ari-ganda-pakpahan-7b7b1a286/"
-            target="_blank"
+            href="#contact"
+            class="border border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white px-5 py-3 rounded-lg transition"
           >
-            <i class="fa-brands fa-linkedin text-white mx-2"></i>
-          </a>
-          <a href="https://github.com/Kenbul" target="_blank">
-            <i class="fa-brands fa-github text-white mx-2"></i>
+            Contact Me
           </a>
         </div>
+        <div
+          class="mt-6 flex justify-center md:justify-start space-x-4 text-2xl"
+        >
+          <a
+            href="https://instagram.com/ari_ganda_pakpahan"
+            target="_blank"
+            class="hover:text-pink-500"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+          <a
+            href="https://linkedin.com/in/ari-ganda-pakpahan-7b7b1a286/"
+            target="_blank"
+            class="hover:text-blue-500"
+            ><i class="fa-brands fa-linkedin"></i
+          ></a>
+          <a
+            href="https://github.com/Kenbul"
+            target="_blank"
+            class="hover:text-gray-400"
+            ><i class="fa-brands fa-github"></i
+          ></a>
+        </div>
       </div>
-      <div class="flex-shrink-0" style="perspective: 1000px">
-        <img
-          id="profile-img"
-          src="assets/profile.webp"
-          alt="Theo's Photo"
-          class="w-64 h-64 object-cover rounded-full border-white shadow-2xl transition-transform duration-300 transform-gpu"
-        />
+      <div class="md:w-1/2 flex justify-center">
+        <div class="relative group">
+          <div
+            class="absolute -inset-1 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-e-xl blur-lg opacity-30 group-hover:opacity-80 transition"
+          ></div>
+          <img
+            src="assets/profile.webp"
+            alt="Profile"
+            class="relative w-80 h-120 object-cover rounded-xl border-4 border-blue-500 shadow-2xl transform group-hover:scale-105 transition-all duration-500 hover:rotate-x-15 hover:rotate-y-30"
+          />
+        </div>
       </div>
     </section>
-    <section class="container mx-auto py-10 mb-10" id="project">
-      <h2 class="text-4xl font-bold text-center text-white mb-10">
-        MY PROJECT
-      </h2>
-      <div
-        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-white"
-      >
+
+    <!-- About -->
+    <section
+      id="about"
+      class="py-20 bg-slate-800 relative overflow-hidden"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
+      <div class="max-w-5xl mx-auto px-6 text-center">
+        <!-- Background subtle blur effect -->
         <div
-          class="bg-gradient-to-b from-slate-800 to-slate-900 rounded-lg p-8 text-center hover:shadow-xl shadow-blue-700"
+          class="absolute inset-0 bg-gradient-to-t from-violet-900/40 to-slate-800/90 blur-3xl opacity-40"
+        ></div>
+
+        <!-- Title -->
+        <h2
+          class="text-4xl font-bold mb-6 text-white relative z-10 hover:text-violet-800"
         >
-          <div class="bg-gray-700 inline-flex items-center justify-center">
-            <img src="assets/project/E-Surat.jpg" alt="E-Surat" width="500px" />
-          </div>
-          <h3 class="text-lg font-semibold mb-2">E-Surat</h3>
-          <p class="text-sm mb-4">Dengan PHP Native dan Boostap 5</p>
-          <a
-            href="https://github.com/Kenbul/E-Surat"
-            class="text-blue-400 hover:text-blue-300"
-            >Learn More &rarr;</a
+          About Me
+        </h2>
+
+        <!-- Description -->
+        <p
+          class="text-gray-300 leading-relaxed max-w-3xl mx-auto relative z-10"
+        >
+          Saya adalah seorang
+          <span class="text-white font-semibold">Junior Web Developer</span>
+          yang berfokus pada pembuatan sistem berbasis web menggunakan
+          <span class="text-blue-400">PHP</span>,
+          <span class="text-red-400">Laravel</span>, dan
+          <span class="text-cyan-400">Tailwind CSS</span>. Saat ini saya juga
+          mendalami bidang
+          <span class="text-yellow-300">analisis data</span> menggunakan
+          <span class="text-green-300">Python</span> untuk mendukung proses
+          pengambilan keputusan yang lebih efektif.
+        </p>
+
+        <!-- Skill Icons -->
+        <div class="mt-10 flex justify-center flex-wrap gap-6 relative z-10">
+          <!-- HTML -->
+          <div
+            class="group flex items-center space-x-2 px-5 py-3 bg-slate-700/60 rounded-lg shadow-md hover:shadow-violet-500/50 hover:scale-105 transition-all duration-300"
+            data-aos="zoom-in"
+            data-aos-duration="700"
           >
+            <i
+              class="fa-brands fa-html5 text-orange-500 text-2xl group-hover:rotate-12 transition-transform"
+            ></i>
+            <span class="text-sm font-semibold">HTML5</span>
+          </div>
+
+          <!-- CSS -->
+          <div
+            class="group flex items-center space-x-2 px-5 py-3 bg-slate-700/60 rounded-lg shadow-md hover:shadow-cyan-400/50 hover:scale-105 transition-all duration-300"
+            data-aos="zoom-in"
+            data-aos-duration="800"
+          >
+            <i
+              class="fa-brands fa-css3-alt text-blue-400 text-2xl group-hover:rotate-12 transition-transform"
+            ></i>
+            <span class="text-sm font-semibold">CSS3 / Tailwind</span>
+          </div>
+
+          <!-- JS -->
+          <div
+            class="group flex items-center space-x-2 px-5 py-3 bg-slate-700/60 rounded-lg shadow-md hover:shadow-yellow-400/50 hover:scale-105 transition-all duration-300"
+            data-aos="zoom-in"
+            data-aos-duration="900"
+          >
+            <i
+              class="fa-brands fa-js text-yellow-400 text-2xl group-hover:rotate-12 transition-transform"
+            ></i>
+            <span class="text-sm font-semibold">JavaScript</span>
+          </div>
+
+          <!-- Laravel -->
+          <div
+            class="group flex items-center space-x-2 px-5 py-3 bg-slate-700/60 rounded-lg shadow-md hover:shadow-red-500/50 hover:scale-105 transition-all duration-300"
+            data-aos="zoom-in"
+            data-aos-duration="1000"
+          >
+            <i
+              class="fa-brands fa-laravel text-red-500 text-2xl group-hover:rotate-12 transition-transform"
+            ></i>
+            <span class="text-sm font-semibold">Laravel</span>
+          </div>
+
+          <!-- MySQL -->
+          <div
+            class="group flex items-center space-x-2 px-5 py-3 bg-slate-700/60 rounded-lg shadow-md hover:shadow-sky-400/50 hover:scale-105 transition-all duration-300"
+            data-aos="zoom-in"
+            data-aos-duration="1100"
+          >
+            <i
+              class="fa-solid fa-database text-sky-400 text-2xl group-hover:rotate-12 transition-transform"
+            ></i>
+            <span class="text-sm font-semibold">MySQL</span>
+          </div>
+
+          <!-- Python -->
+          <div
+            class="group flex items-center space-x-2 px-5 py-3 bg-slate-700/60 rounded-lg shadow-md hover:shadow-green-400/50 hover:scale-105 transition-all duration-300"
+            data-aos="zoom-in"
+            data-aos-duration="1200"
+          >
+            <i
+              class="fa-brands fa-python text-green-400 text-2xl group-hover:rotate-12 transition-transform"
+            ></i>
+            <span class="text-sm font-semibold">Python</span>
+          </div>
         </div>
-        <div
-          class="bg-gradient-to-b from-slate-800 to-slate-900 rounded-lg p-8 text-center hover:shadow-xl shadow-blue-700"
-        >
-          <div class="bg-gray-700 inline-flex items-center justify-center">
-            <video class="rounded-lg w-[500px]" controls autoplay muted loop>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section
+      id="project"
+      class="py-20"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
+      <div class="max-w-6xl mx-auto px-6 text-center">
+        <h2 class="text-4xl font-bold mb-12 text-white">My Projects</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Card 1 -->
+          <div
+            class="bg-slate-800 rounded-xl overflow-hidden hover:scale-105 transition-all shadow-lg hover:shadow-blue-500/40"
+            data-aos="fade-up"
+            data-aos-duration="700"
+          >
+            <img
+              src="assets/project/E-Surat.jpg"
+              alt="E-Surat"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-5 text-left">
+              <h3 class="text-lg font-semibold">E-Surat</h3>
+              <p class="text-gray-400 text-sm mt-2">PHP Native & Bootstrap 5</p>
+              <a
+                href="https://github.com/Kenbul/E-Surat"
+                target="_blank"
+                class="text-blue-400 hover:text-blue-300 mt-3 inline-block"
+                >Learn More →</a
+              >
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div
+            class="bg-slate-800 rounded-xl overflow-hidden hover:scale-105 transition-all shadow-lg hover:shadow-blue-500/40"
+            data-aos="fade-up"
+            data-aos-duration="800"
+          >
+            <video autoplay muted loop class="w-full h-48 object-cover">
               <source src="assets/project/pos-demo.mp4" type="video/mp4" />
-              Browser kamu tidak mendukung video.
             </video>
+            <div class="p-5 text-left">
+              <h3 class="text-lg font-semibold">E-Warung untuk UMKM</h3>
+              <p class="text-gray-400 text-sm mt-2">
+                Laravel 12 & SPA Modern UI
+              </p>
+              <a
+                href="https://github.com/Kenbul/pos-kedai"
+                target="_blank"
+                class="text-blue-400 hover:text-blue-300 mt-3 inline-block"
+                >Learn More →</a
+              >
+            </div>
           </div>
-          <h3 class="text-lg font-semibold mb-2">E-Warung Untuk UMKM</h3>
-          <p class="text-sm mb-4">
-            Menggunakan Laravel 12 dengan Tampilan yang lebih modren
-          </p>
-          <a
-            href="https://github.com/Kenbul/pos-kedai"
-            class="text-blue-400 hover:text-blue-300"
-            >Learn More &rarr;</a
+          <!-- Card 3 -->
+          <div
+            class="bg-slate-800 rounded-xl overflow-hidden hover:scale-105 transition-all shadow-lg hover:shadow-blue-500/40"
+            data-aos="fade-up"
+            data-aos-duration="900"
           >
-        </div>
-        <div
-          class="bg-gradient-to-b from-slate-800 to-slate-900 rounded-lg p-8 text-center hover:shadow-xl shadow-blue-700"
-        >
-          <div class="bg-gray-700 inline-flex items-center justify-center">
-            <video class="rounded-lg w-[500px]" controls autoplay muted loop>
+            <video autoplay muted loop class="w-full h-48 object-cover">
               <source
                 src="assets/project/sistem-sekolah-demo.mp4"
                 type="video/mp4"
               />
-              Browser kamu tidak mendukung video.
             </video>
+            <div class="p-5 text-left">
+              <h3 class="text-lg font-semibold">Pendataan Siswa & Surat</h3>
+              <p class="text-gray-400 text-sm mt-2">
+                SPA berbasis Laravel + JS
+              </p>
+              <a
+                href="https://github.com/Kenbul/Administrasi-Sekolah"
+                target="_blank"
+                class="text-blue-400 hover:text-blue-300 mt-3 inline-block"
+                >Learn More →</a
+              >
+            </div>
           </div>
-          <h3 class="text-lg font-semibold mb-2">
-            Pendataan Siswa dan Manajemen Surat
-          </h3>
-          <p class="text-sm mb-4">
-            Dengan menggunakan SPA di menjadikan sistem ini lebih User Freandly
-          </p>
-          <a
-            href="https://github.com/Kenbul/Administrasi-Sekolah"
-            class="text-blue-400 hover:text-blue-300"
-            >Learn More &rarr;</a
-          >
-        </div>
-        <div
-          class="bg-gradient-to-b from-slate-800 to-slate-900 rounded-lg p-8 text-center hover:shadow-xl shadow-blue-700"
-        >
-          <div class="bg-gray-700 inline-flex items-center justify-center">
-            <video class="rounded-lg w-[500px]" controls autoplay muted loop>
-              <source
-                src="assets/project/sistem-scm-demo.mp4"
-                type="video/mp4"
-              />
-              Browser kamu tidak mendukung video.
-            </video>
-          </div>
-          <h3 class="text-lg font-semibold mb-2">
-            Sistem Inventori dengan pendekatan SCM
-          </h3>
-          <p class="text-sm mb-4">
-            Dengan mengimplementasikan sistem ini stok barang anda akan terjaga
-          </p>
-          <a
-            href="https://github.com/Kenbul/Administrasi-Sekolah"
-            class="text-blue-400 hover:text-blue-300"
-            >Learn More &rarr;</a
-          >
         </div>
       </div>
     </section>
+
+    <!-- Contact -->
     <section
-      class="bg-slate-900 text-white py-10 mt-5 border-t border-gray-700"
       id="contact"
+      class="bg-slate-800 py-20"
+      data-aos="fade-up"
+      data-aos-duration="1000"
     >
-      <div class="container mx-auto px-6 grid grid-cols-3 md:grid-cols-3 gap-4">
-        <!-- Kolom 1: Deskripsi -->
-        <div class="col-span-2">
-          <h1 class="text-3xl font-bold mb-4">Contact Me</h1>
+      <div
+        class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12"
+      >
+        <div>
+          <h2 class="text-3xl font-bold mb-4 text-white">
+            Let's Work Together!
+          </h2>
           <p class="text-gray-400 mb-6">
-            Membuat Website Untuk Keperluan Bisnis, Branding, Undangan
-            Pernikahan, Tugas Kuliah...
+            Tertarik bekerja sama atau ingin berdiskusi tentang project web?
+            Hubungi saya melalui WhatsApp atau kirim email.
           </p>
           <div class="flex space-x-4">
             <a
               href="https://wa.me/6282165067574?text=Halo,%20saya%20tertarik%20dengan%20portfolio%20Anda"
-              class="border border-emerald-500 text-white py-2 px-5 hover:bg-green-500 rounded transition"
-              ><i class="fa-brands fa-whatsapp"></i>
-              Wa
+              class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg transition flex items-center space-x-2"
+            >
+              <i class="fa-brands fa-whatsapp"></i><span>WhatsApp</span>
             </a>
             <a
               href="assets/cv/CV-Ari Ganda Pakpahan.pdf"
               download
-              class="border border-white text-white py-2 px-5 rounded hover:bg-gray-700 transition"
+              class="border border-white px-6 py-3 rounded-lg hover:bg-gray-700 flex items-center space-x-2 transition"
             >
-              <i class="fa-solid fa-file"></i>
-              CV
+              <i class="fa-solid fa-file"></i><span>CV</span>
             </a>
           </div>
         </div>
-
-        <!-- Kolom 2: Social Media -->
-        <div>
-          <h3 class="text-xl font-bold mb-4">Follow Me</h3>
-          <ul class="flex space-x-4 text-gray-400 text-2xl md:text-lg">
-            <!-- <li>
-              <a href="#"
-                ><i class="fa-brands fa-square-facebook md:fa-2xs"></i
-              ></a>
-            </li>
-            <li>
-              <a href="#"><i class="fa-brands fa-x-twitter md:fa-2xs"></i></a>
-            </li> -->
-            <li>
-              <a href="https://instagram.com/ari_ganda_pakpahan"
-                ><i class="fa-brands fa-instagram md:fa-2xs"></i
-              ></a>
-            </li>
-            <li>
-              <a
-                href="https://www.linkedin.com/in/ari-ganda-pakpahan-7b7b1a286/"
-                ><i class="fa-brands fa-linkedin md:fa-2xs"></i
-              ></a>
-            </li>
-            <li>
-              <a href="https://github.com/Kenbul"
-                ><i class="fa-brands fa-github md:fa-2xs"></i
-              ></a>
-            </li>
-          </ul>
-          <div class="mt-2">
-            <h3 class="text-xl font-bold mb-4">Contact Info</h3>
-            <p class="text-gray-400">arigandap@gmail.com</p>
+        <div class="flex flex-col space-y-3">
+          <h3 class="text-xl font-semibold">Follow Me</h3>
+          <div class="flex space-x-4 text-2xl">
+            <a
+              href="https://instagram.com/ari_ganda_pakpahan"
+              class="hover:text-pink-500"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+            <a
+              href="https://linkedin.com/in/ari-ganda-pakpahan-7b7b1a286/"
+              class="hover:text-blue-500"
+              ><i class="fa-brands fa-linkedin"></i
+            ></a>
+            <a href="https://github.com/Kenbul" class="hover:text-gray-400"
+              ><i class="fa-brands fa-github"></i
+            ></a>
           </div>
+          <p class="text-gray-400 mt-3">📧 arigandap@gmail.com</p>
         </div>
       </div>
-
-      <!-- Copyright -->
       <div class="text-center text-gray-500 mt-10 text-sm">
         © 2025 Ari Ganda Pakpahan. All rights reserved.
       </div>
     </section>
 
-    <!-- fontowesm -->
-    <script
-      src="https://kit.fontawesome.com/a49b250db2.js"
-      crossorigin="anonymous"
-    ></script>
+    <!-- Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-      const btn = document.getElementById("menu-btn");
-      const menu = document.getElementById("mobile-menu");
-
-      btn.addEventListener("click", () => {
-        menu.classList.toggle("hidden");
-      });
-
-      // Tutup otomatis setelah klik link
-      document.querySelectorAll("#mobile-menu a").forEach((link) => {
-        link.addEventListener("click", () => {
-          menu.classList.add("hidden");
-        });
-      });
+      AOS.init();
     </script>
-    <!-- typewriter -->
     <script>
-      const text = "Hello I'm ARI GANDA PAKPAHAN";
+      window.addEventListener("load", () => {
+        document.body.classList.add("loaded");
+      });
+      // Konfigurasi
+      const text = "Hi, I'm Ari Ganda Pakpahan";
+      const typeSpeed = Math.floor(Math.random() * 50) + 70; // kecepatan mengetik (ms)
+      const deleteSpeed = 45; // kecepatan menghapus (ms)
+      const holdAfterType = 1000; // jeda setelah selesai mengetik
+
+      const el = document.getElementById("typewriter");
       let i = 0;
-      let isDeleting = false;
+      let deleting = false;
 
-      function typeWriter() {
-        const element = document.getElementById("typing");
-        let speed = 120; // kecepatan normal
-
-        if (isDeleting) {
-          element.innerHTML = text.substring(0, i--);
-          speed = 60; // kecepatan hapus lebih cepat
+      function loop() {
+        if (!deleting) {
+          // efek mengetik
+          el.textContent = text.slice(0, i++);
+          if (i <= text.length) {
+            setTimeout(loop, typeSpeed);
+          } else {
+            // selesai ngetik → tahan sebentar → mulai hapus
+            setTimeout(() => {
+              deleting = true;
+              loop(); // langsung lanjut kehapus
+            }, holdAfterType);
+          }
         } else {
-          element.innerHTML = text.substring(0, i++);
-        }
-
-        if (!isDeleting && i === text.length + 1) {
-          isDeleting = true;
-          speed = 1000; // jeda sebelum hapus
-        } else if (isDeleting && i < 0) {
-          isDeleting = false;
-          speed = 500; // jeda sebelum nulis lagi
-        }
-
-        setTimeout(typeWriter, speed);
-      }
-
-      window.onload = typeWriter;
-    </script>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const img = document.getElementById("profile-img");
-        if (!img) {
-          console.warn("profile-img tidak ditemukan di DOM");
-          return;
-        }
-
-        let rafId = null;
-        let mouseX = 0,
-          mouseY = 0;
-        let needsUpdate = false;
-
-        function scheduleUpdate() {
-          if (!needsUpdate) {
-            needsUpdate = true;
-            rafId = requestAnimationFrame(updateTransform);
+          // efek menghapus
+          el.textContent = text.slice(0, --i);
+          if (i >= 0) {
+            setTimeout(loop, deleteSpeed);
+          } else {
+            // begitu habis → langsung ketik lagi tanpa jeda
+            deleting = false;
+            setTimeout(loop, typeSpeed);
           }
         }
+      }
 
-        function updateTransform() {
-          needsUpdate = false;
+      window.addEventListener("load", loop);
+      // Mulai saat halaman siap
+      window.addEventListener("load", loop);
+      // Animasi crol Masuk
+      // Jalankan AOS setelah semua elemen termuat
+      window.addEventListener("load", () => {
+        AOS.init({
+          duration: 1000, // durasi default animasi (ms)
+          offset: 80, // jarak dari bawah viewport
+          easing: "ease-out", // efek halus
+        });
+      });
+      // Mobile menu
+      const btn = document.getElementById("menu-btn");
+      const menu = document.getElementById("mobile-menu");
+      btn.addEventListener("click", () => menu.classList.toggle("hidden"));
 
-          const rect = img.getBoundingClientRect();
-          const cx = rect.left + rect.width / 2;
-          const cy = rect.top + rect.height / 2;
-
-          // jarak kursor relatif ke center (-0.5 .. 0.5)
-          const relX = (mouseX - cx) / rect.width;
-          const relY = (mouseY - cy) / rect.height;
-
-          // faktor rotasi (atur sesuai selera)
-          const maxRotate = 15; // derajat
-          const rotateX = -relY * maxRotate; // vertical -> rotateX
-          const rotateY = relX * maxRotate; // horizontal -> rotateY
-
-          img.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.03)`;
-        }
-
-        // mousemove handler
-        function onMove(e) {
-          const clientX = e.touches ? e.touches[0].clientX : e.clientX;
-          const clientY = e.touches ? e.touches[0].clientY : e.clientY;
-          mouseX = clientX;
-          mouseY = clientY;
-          scheduleUpdate();
-        }
-
-        // reset saat mouse keluar
-        function reset() {
-          if (rafId) cancelAnimationFrame(rafId);
-          needsUpdate = false;
-          img.style.transform =
-            "perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)";
-        }
-
-        document.addEventListener("mousemove", onMove);
-        document.addEventListener("touchmove", onMove, { passive: true });
-
-        document.addEventListener("mouseleave", reset);
-        window.addEventListener("blur", reset); // reset saat fokus window hilang
+      // Navbar scroll effect
+      window.addEventListener("scroll", () => {
+        const navbar = document.getElementById("navbar");
+        if (window.scrollY > 50)
+          navbar.classList.add("bg-slate-900", "shadow-lg");
+        else navbar.classList.remove("shadow-lg");
       });
     </script>
   </body>
